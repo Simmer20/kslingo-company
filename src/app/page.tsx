@@ -1,30 +1,27 @@
+import { Hero } from "@/components/hero/hero";
+import { Section } from "@/components/ui/section";
+
 export default function Home() {
   return (
     <main id="main">
-      <section
-        id="top"
-        className="relative flex min-h-screen items-center justify-center px-6"
-      >
-        <div className="text-center">
-          <p className="eyebrow mb-4">Beyond Words. Beyond Barriers.</p>
-          <h1 className="editorial-heading max-w-3xl">
-            Everyone deserves to be understood.
-          </h1>
-        </div>
-      </section>
+      <Hero />
 
-      <section className="min-h-[60vh] px-6 py-24">
-        <p className="mx-auto max-w-2xl text-content-secondary">
-          Scroll to verify the progress bar and navigation glass effect.
-          This content will be replaced by real sections in later steps.
-        </p>
-      </section>
+      {/* Placeholder sections — replaced in subsequent steps. */}
+      <Section id="story" className="bg-bg-primary">
+        <p className="text-content-secondary">Section 03 — The Personal Story</p>
+      </Section>
 
-      <section className="min-h-[60vh] px-6 py-24">
-        <p className="mx-auto max-w-2xl text-content-secondary">
-          More placeholder content to make the page scrollable.
-        </p>
-      </section>
+      <Section id="platform" className="bg-bg-secondary">
+        <p className="text-content-secondary">Section 05 — Product Experience</p>
+      </Section>
+
+      <Section id="vision" className="bg-bg-primary">
+        <p className="text-content-secondary">Section 08 — Our Bigger Vision</p>
+      </Section>
+
+      <Section id="waitlist" className="bg-bg-secondary">
+        <p className="text-content-secondary">Section 10 — Join the Movement</p>
+      </Section>
     </main>
   );
 }
