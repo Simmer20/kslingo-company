@@ -1,0 +1,77 @@
+:root {
+    --bg-primary: #101329;
+    --bg-secondary: #191d3b;
+    --surface: #222747;
+    --accent-blue: #6875f5;
+    --accent-purple: #9270e8;
+    --accent-green: #65c98b;
+    --accent-orange: #ffa34f;
+    --text-primary: #ffffff;
+    --text-secondary: #c2c5db;
+
+    /*Glass*/
+    --glass-bg: rgba(255, 255, 255, 0.06);
+    --glass-bg-strong: rgba(255, 255, 255, 0.1);
+    --glass-border: rgba(255, 255, 255, 0.12);
+    --glass-shadow: 0 8px 32px rgba(0,0,0,0.35);
+    --glow-blue: 0 0 60px rgba(104, 117, 245, 0.25);
+    --glow-purple: 0 0 60px rgba(146, 112, 232, 0.25);
+
+    /*Radii*/
+    --radius-sm: 8px;
+    --radius-md: 16px;
+    --radius-lg: 24px;
+    --radius-xl:32px;
+
+    /*motion*/
+    --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+    --dur-fast: 150ms;
+    --dur-base: 300ms;
+    --dur-slow: 600ms;
+}
+
+html.light {
+    --bg-primary: #f7f7fc;
+    --bg-secondary: #eeeefa;
+    --surface: #ffffff;
+    --accent-blue: #5865e8;
+    --accent-purple: #8665d9;
+    --accent-green: #4baf76;
+    --accent-orange: #e88b36;
+    --text-primary: #17182d;
+    --text-secondary: #666981;
+
+    --glass-bg: rgba(255, 255, 255, 00.55);
+    --glass-bg-strong: rgba(255, 255, 255, 0.75);
+    --glass-border: rgba(23, 24, 45, 0.08);
+    --glass-shadow: 0 8px 32px rgba(23, 24, 45, 0.08);
+    --glow-blue: 0 0 60px rgba(88, 101, 232, 0.18);
+    --glow-purple: 0 0 60px rgba(134, 101, 217, 0.18);
+}
+
+/* High contast ovverides*/
+html.light.high-contrast {
+    --text-secondary: var(--text-primary);
+    --glass-border: rgba(255, 255, 255, 0.35);
+}
+html.light.high-contrast {
+    --glass-border: rgba(23, 24, 45, 0.35);
+}
+/*Text-size scaling(Accesibility Provider)*/
+html{
+    font-size: calc(16px * var(--text-scale, 1));
+}
+/*Smooth theme transition*/
+html, 
+html *{
+    transition: background-color var(--dur-base) var(--ease-out), 
+                border-color var(--dur-base) var (--ease-out),
+                color var(--dur-base) var(--ease-out);
+}
+/*Reduced motion - kill all transitions */
+@media (prefers-reduced-motion: reduce){
+    html, html *{
+        transition: none !important; 
+        animation: none !important;
+    }
+}
